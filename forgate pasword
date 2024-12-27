@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forgot Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 400px;
+            width: 100%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .container h1 {
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"] {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .form-group button:hover {
+            background: #0056b3;
+        }
+        .links {
+            margin-top: 10px;
+        }
+        .links a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+        .radio-group {
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Forgot Password</h1>
+        <form id="forgot-password-form" onsubmit="handleForgotPassword(event)">
+            <div class="form-group radio-group">
+                <label><input type="radio" name="method" value="email" onclick="toggleInput('email')" required> Reset via Email</label><br>
+                <label><input type="radio" name="method" value="phone" onclick="toggleInput('phone')"> Reset via Phone Number</label><br>
+                <label><input type="radio" name="method" value="userid" onclick="toggleInput('userid')"> Reset via User ID</label>
+            </div>
+            <div class="form-group" id="email-group" style="display: none;">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Enter your registered email">
+            </div>
+            <div class="form-group" id="phone-group" style="display: none;">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" placeholder="Enter your registered phone number">
+            </div>
+            <div class="form-group" id="userid-group" style="display: none;">
+                <label for="userid">User ID</label>
+                <input type="text" id="userid" placeholder="Enter your User ID">
+            </div>
+            <div class="form-group">
+                <button type="submit">Reset Password</button>
+            </div>
+        </form>
+        <div class="links">
+            <a href="signin.html">Back to Sign In</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleInput(method) {
+            // Hide all input groups initially
+            document.getElementById('email-group').style.display = 'none';
+            document.getElementById('phone-group').style.display = 'none';
+            document.getElementById('userid-group').style.display = 'none';
+
+            // Show the selected input group
+            if (method === 'email') {
+                document.getElementById('email-group').style.display = 'block';
+            } else if (method === 'phone') {
+                document.getElementById('phone-group').style.display = 'block';
+            } else if (method === 'userid') {
+                document.getElementById('userid-group').style.display = 'block';
+            }
+        }
+
+        function handleForgotPassword(event) {
+            event.preventDefault();
+
+            // Get the selected method
+            const method = document.querySelector('input[name="method"]:checked').value;
+
+            if (method === 'email') {
+                const email = document.getElementById('email').value;
+                if (email) {
+                    alert(`Password reset instructions have been sent to your email: ${email}`);
+                } else {
+                    alert("Please enter your email address.");
+                }
+            } else if (method === 'phone') {
+                const phone = document.getElementById('phone').value;
+                if (phone) {
+                    alert(`Password reset instructions have been sent to your phone number: ${phone}`);
+                } else {
+                    alert("Please enter your phone number.");
+                }
+            } else if (method === 'userid') {
+                const userid = document.getElementById('userid').value;
+                if (userid) {
+                    alert(`Password reset instructions have been sent for User ID: ${userid}`);
+                } else {
+                    alert("Please enter your User ID.");
+                }
+            } else {
+                alert("Please select a method to reset your password.");
+            }
+        }
+    </script>
+</body>
+</html>

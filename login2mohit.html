@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 600px;
+            width: 100%;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .container h1 {
+            margin-bottom: 20px;
+        }
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .buttons button {
+            padding: 10px 20px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .buttons button:hover {
+            background: #0056b3;
+        }
+        .auth-container {
+            margin-top: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        .form-group button:hover {
+            background: #0056b3;
+        }
+        .links {
+            margin-top: 10px;
+        }
+        .links a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .links a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to the Authentication System</h1>
+        <div class="buttons">
+            <button onclick="renderSignIn()">Sign In</button>
+            <button onclick="renderSignUp()">Sign Up</button>
+        </div>
+        <div id="auth-container" class="auth-container">
+            <!-- Dynamic content will be inserted here by JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        function renderSignIn() {
+            document.getElementById('auth-container').innerHTML = `
+                <h2>Sign In</h2>
+                <form id="sign-in-form" onsubmit="handleSignIn(event)">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Sign In</button>
+                    </div>
+                </form>
+                <div class="links">
+                    <a href="#" onclick="renderForgotPassword()">Forgot Password?</a>
+                </div>
+            `;
+        }
+
+        function renderSignUp() {
+            document.getElementById('auth-container').innerHTML = `
+                <h2>Sign Up</h2>
+                <form id="sign-up-form" onsubmit="handleSignUp(event)">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Sign Up</button>
+                    </div>
+                </form>
+            `;
+        }
+
+        function renderForgotPassword() {
+            document.getElementById('auth-container').innerHTML = `
+                <h2>Forgot Password</h2>
+                <form id="forgot-password-form" onsubmit="handleForgotPassword(event)">
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit">Reset Password</button>
+                    </div>
+                </form>
+            `;
+        }
+
+        function handleSignIn(event) {
+            event.preventDefault();
+            alert("Sign In form submitted.");
+        }
+
+        function handleSignUp(event) {
+            event.preventDefault();
+            alert("Sign Up form submitted.");
+        }
+
+        function handleForgotPassword(event) {
+            event.preventDefault();
+            alert("Password reset request submitted.");
+        }
+
+        // Initialize without any form displayed
+        document.getElementById('auth-container').innerHTML = "<p>Select an option above to proceed.</p>";
+    </script>
+</body>
+</html>

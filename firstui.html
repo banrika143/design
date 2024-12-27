@@ -1,0 +1,267 @@
+<html>
+ <head>
+  <title>
+   Astica AI
+  </title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+            margin: 0;
+            font-family: 'Roboto Mono', monospace;
+            background-color: #121212;
+            color: #ffffff;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #1f1f1f;
+        }
+        .navbar .logo {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+        .navbar .menu {
+            display: flex;
+            align-items: center;
+        }
+        .navbar .menu i {
+            margin-left: 20px;
+            cursor: pointer;
+        }
+        .main-content {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+        }
+        .sidebar {
+            width: 250px;
+            padding: 20px;
+            background-color: #1f1f1f;
+        }
+        .sidebar h3 {
+            margin-top: 0;
+            color: #b0bec5;
+        }
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .sidebar ul li a:hover {
+            color: #64b5f6;
+        }
+        .sidebar ul li a i {
+            margin-right: 10px;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            background-color: #121212;
+        }
+        .content .welcome {
+            border: 2px solid #64b5f6;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .content .welcome h1 {
+            margin-top: 0;
+            color: #64b5f6;
+        }
+        .content .welcome p {
+            margin: 5px 0;
+        }
+        .content .updates {
+            display: flex;
+            justify-content: space-between;
+        }
+        .content .updates .update {
+            width: 48%;
+            padding: 20px;
+            border: 2px solid #64b5f6;
+            border-radius: 10px;
+        }
+        .content .updates .update h3 {
+            margin-top: 0;
+            color: #64b5f6;
+        }
+        @media (max-width: 768px) {
+            .main-content {
+                flex-direction: column;
+            }
+            .sidebar {
+                width: 100%;
+            }
+            .content .updates {
+                flex-direction: column;
+            }
+            .content .updates .update {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <div class="container">
+   <div class="navbar">
+    <div class="logo">
+     <img alt="Astica AI Logo" height="30" src="https://storage.googleapis.com/a1aa/image/T8lkLcghxNJYHJaL4YHZ2gygxiLjUu8QBv1oFENxfkoBRDeTA.jpg" width="30"/>
+     <span>
+      astica
+      <span style="color: #64b5f6;">
+       [ai]
+      </span>
+     </span>
+    </div>
+    <div class="menu">
+     <i class="fas fa-bars">
+     </i>
+     <i class="fas fa-bell">
+     </i>
+     <img alt="User Avatar" height="30" src="https://storage.googleapis.com/a1aa/image/Wcs6fncex5vWwkSrFOdUomKybIbZ2kWVe2OCiRXjIlOIEN4nA.jpg" width="30"/>
+    </div>
+   </div>
+   <div class="main-content">
+    <div class="sidebar">
+     <h3>
+      Account
+     </h3>
+     <ul>
+      <li>
+       <a href="#">
+        <i class="fas fa-th-large">
+        </i>
+        Dashboard
+       </a>
+      </li>
+      <li>
+       <a href="#">
+        <i class="fas fa-user">
+        </i>
+        Account
+       </a>
+      </li>
+     </ul>
+     <h3>
+      Manage
+     </h3>
+     <ul>
+      <li>
+       <a href="#">
+        Account Dashboard
+       </a>
+      </li>
+      <li>
+       <a href="#">
+        API Keys
+       </a>
+      </li>
+     </ul>
+     <h3>
+      Service
+     </h3>
+     <ul>
+      <li>
+       <a href="#">
+        Upgrades
+       </a>
+      </li>
+      <li>
+       <a href="#">
+        API Billing
+       </a>
+      </li>
+      <li>
+       <a href="#">
+        Billing Profiles
+       </a>
+      </li>
+     </ul>
+     <h3>
+      Account
+     </h3>
+     <ul>
+      <li>
+       <a href="#">
+        Account Login
+       </a>
+      </li>
+      <li>
+       <a href="#">
+        Register for Free
+       </a>
+      </li>
+     </ul>
+     <h3>
+      Documentation
+     </h3>
+     <ul>
+      <li>
+       <a href="#">
+        <i class="fas fa-eye">
+        </i>
+        Vision AI
+        <span style="color: #64b5f6;">
+         v2.5 preview
+        </span>
+       </a>
+      </li>
+     </ul>
+    </div>
+    <div class="content">
+     <div class="welcome">
+      <h1>
+       Hello, world!
+      </h1>
+      <p>
+       Introducing a new way to interact with astica cognitive intelligence.
+      </p>
+      <p>
+       Improved capability, documentation, and more functionality now at your disposal.
+      </p>
+     </div>
+     <div class="updates">
+      <div class="update">
+       <h3>
+        asticaVision: Custom Prompts
+       </h3>
+       <p>
+        Model now accepts custom prompts. "How many calories are in this product? Respond in French."
+       </p>
+      </div>
+      <div class="update">
+       <h3>
+        Early Access
+       </h3>
+       <p>
+        Please consider sharing your feedback: success@astica.ai
+       </p>
+       <p>
+        Thank you for your participation.
+       </p>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
